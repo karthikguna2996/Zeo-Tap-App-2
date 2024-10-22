@@ -1,131 +1,146 @@
 /* General styling for the app */
 .weather-app {
-    font-family: 'Poppins', sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    color: #fff; /* Set default text color to white for better contrast */
-    transition: background 0.5s ease-in-out;
-    border-radius: 15px;
-  }
-  
-  /* Vibrant background colors for different weather conditions */
-  .background-clear {
-    background-color: #ffcc33; /* Vibrant sunny yellow */
-  }
-  
-  .background-clouds {
-    background-color: #6c757d; /* Neutral but striking gray for cloudy */
-  }
-  
-  .background-rain {
-    background-color: #0077b6; /* Bold deep blue for rainy weather */
-  }
-  
-  .background-snow {
-    background-color: #00bcd4; /* Bright cyan for snowy weather */
-  }
-  
-  .background-default {
-    background-color: #607d8b; /* Muted dark blue-gray for default */
-  }
-  
-  /* Header and threshold input */
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    color: #ffffff; /* White text for better contrast on vibrant backgrounds */
-  }
-  
-  .threshold-input {
-    margin-right: 20px;
-  }
-  
-  input[type="number"] {
-    width: 60px;
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 1px solid #fff;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  /* Daily and Weekly Summary */
-  .daily-summary,
-  .weekly-forecast {
-    margin-top: 20px;
-  }
-  
-  h2 {
-    color: #ffffff; /* Keep headers white for contrast */
-  }
-  
-  .summary-card {
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white for subtle contrast */
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 15px;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .summary-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  /* Grid layout for weekly forecast */
+  font-family: 'Poppins', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #000000; /* Black text for contrast */
+  transition: background 0.5s ease-in-out;
+  border-radius: 15px;
+}
+
+/* Sky blue gradient background for all weather conditions */
+.background-clear,
+.background-clouds,
+.background-rain,
+.background-snow,
+.background-default {
+  background: linear-gradient(to bottom, #87ceeb, #b0e0e6); /* Sky blue gradient */
+  color: #000000; /* Ensure all text is black */
+}
+
+/* Header and threshold input */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #000000; /* Black text for readability */
+}
+
+.threshold-input {
+  margin-right: 20px;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  color: #000000; /* Black text inside input */
+}
+
+button {
+  background-color: #0077b6; /* Light blue button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #005f73; /* Darker blue on hover */
+}
+
+/* Daily and Weekly Summary */
+.daily-summary,
+.weekly-forecast {
+  margin-top: 20px;
+}
+
+h2 {
+  color: #000000; /* Black headers for readability */
+}
+
+.summary-card {
+  background-color: rgba(255, 255, 255, 0.8); /* White background for summary card */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Grid layout for weekly forecast */
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
   .forecast-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media (max-width: 900px) {
-    .forecast-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+}
+
+@media (max-width: 600px) {
+  .forecast-grid {
+    grid-template-columns: 1fr;
   }
-  
-  @media (max-width: 600px) {
-    .forecast-grid {
-      grid-template-columns: 1fr;
-    }
+}
+
+/* Loader styling */
+.loader {
+  font-size: 24px;
+  color: #000000;
+  text-align: center;
+  padding: 50px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Alert styling */
+.alert-container {
+  margin: 20px 0;
+}
+
+.alert {
+  background-color: #f44336; /* Red background for alerts */
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+/* Responsive typography for smaller screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
   }
-  
-  /* Loader styling */
-  .loader {
-    font-size: 24px;
-    color: #ffffff;
-    text-align: center;
-    padding: 50px;
-    animation: blink 1s infinite;
+
+  h2 {
+    font-size: 1.3rem;
   }
-  
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+
+  p {
+    font-size: 0.9rem;
   }
-  
-  /* Responsive typography for smaller screens */
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 1.5rem;
-    }
-  
-    h2 {
-      font-size: 1.3rem;
-    }
-  
-    p {
-      font-size: 0.9rem;
-    }
-  }
-  
+}

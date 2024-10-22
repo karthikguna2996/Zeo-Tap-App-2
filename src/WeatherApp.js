@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import './WeatherApp.css'; // Link your CSS file
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloud, faSun, faCloudRain, faSnowflake } from '@fortawesome/free-solid-svg-icons'; // Import FontAwesome icons
+import { faCloud, faSun, faCloudRain, faSnowflake, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'; // Import FontAwesome icons
 
 export default function WeatherApp() {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [alertThreshold, setAlertThreshold] = useState(35); // Default temperature alert threshold in Celsius
+  const [alertMessage, setAlertMessage] = useState(""); // State for alert messages
 
   // Function to group weather data by day and calculate aggregates
   const processWeatherData = (dataList) => {
@@ -57,17 +58,30 @@ export default function WeatherApp() {
     return dailySummaries;
   };
 
+  // Memoized checkForAlerts function to avoid unnecessary re-renders
+  const checkForAlerts = useCallback((dailySummaries) => {
+    const todayData = dailySummaries[0];
+    if (todayData && todayData.maxTemp > alertThreshold) {
+      setAlertMessage(`Alert: Today's max temperature of ${todayData.maxTemp.toFixed(2)}°C exceeds the threshold of ${alertThreshold}°C`);
+    } else {
+      setAlertMessage(""); // Clear the alert if no breach
+    }
+  }, [alertThreshold]); // alertThreshold is a dependency
+
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=e27eb7143ad52f35a26ec4d5cc33f3d7&units=metric`
+          "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=e27eb7143ad52f35a26ec4d5cc33f3d7&units=metric"
         );
 
         const dailySummaries = processWeatherData(response.data.list);
         setWeatherData(dailySummaries);
         setLoading(false);
+
+        // Check for alerts after processing data
+        checkForAlerts(dailySummaries);
       } catch (error) {
         console.error("Error fetching data:", error);
         setLoading(false);
@@ -78,7 +92,7 @@ export default function WeatherApp() {
     const interval = setInterval(fetchWeatherData, 5 * 60 * 1000); // Fetch every 5 minutes
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  }, [alertThreshold, checkForAlerts]); // checkForAlerts and alertThreshold are dependencies
 
   if (loading) {
     return <div className="loader">Loading...</div>; // Show loading spinner while fetching data
@@ -131,6 +145,12 @@ export default function WeatherApp() {
           />
         </div>
       </div>
+
+      {alertMessage && (
+        <div className="alert">
+          <FontAwesomeIcon icon={faExclamationTriangle} size="2x" /> {alertMessage}
+        </div>
+      )}
 
       <div className="daily-summary today">
         <h2>Today's Summary</h2>
