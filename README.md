@@ -25,7 +25,7 @@ You also need an API key from OpenWeatherMap. [Sign up for a free API key here](
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/weather-app.git
+     git clone https://github.com/yourusername/weather-app.git
 2.Install the dependencies:
 
     
@@ -39,11 +39,10 @@ You also need an API key from OpenWeatherMap. [Sign up for a free API key here](
      REACT_APP_API_KEY=your_api_key_here
  
  
-Start the development server:
+4.Start the development server:
 
-bash
-Copy code
-npm start
+ 
+     npm start
 The app will be running at http://localhost:3000.
 
 Available Scripts
