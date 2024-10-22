@@ -22,22 +22,23 @@ These instructions will help you set up the project on your local machine for de
 You also need an API key from OpenWeatherMap. [Sign up for a free API key here](https://openweathermap.org/api).
 
 ### Installing
-
 1. Clone the repository:
 
    ```bash
    git clone https://github.com/yourusername/weather-app.git
-Install the dependencies:
+2.Install the dependencies:
 
-bash
-Copy code
-cd weather-app
-npm install
-Create a .env file in the project root and add your OpenWeatherMap API key:
+    
+    cd weather-app
+    npm install
+ 
+ 
+3.Create a .env file in the project root and add your OpenWeatherMap API key:
 
-bash
-Copy code
-REACT_APP_API_KEY=your_api_key_here
+     
+     REACT_APP_API_KEY=your_api_key_here
+ 
+ 
 Start the development server:
 
 bash
