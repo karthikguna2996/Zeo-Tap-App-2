@@ -43,50 +43,27 @@ You also need an API key from OpenWeatherMap. [Sign up for a free API key here](
 
  
      npm start
-The app will be running at http://localhost:3000.
+The app will run on http://localhost:3000.
 
-Available Scripts
-In the project directory, you can run:
+Learn More
+You can learn more in the Create React App documentation.
 
-npm start
-Runs the app in development mode.
-Open http://localhost:3000 to view it in your browser.
+To learn React, check out the React documentation.
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+Code Splitting
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-npm test
-Launches the test runner in the interactive watch mode.
-To learn more about testing, visit the testing documentation.
+Analyzing the Bundle Size
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-npm run build
-Builds the app for production to the build folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Making a Progressive Web App
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-The build is minified, and the filenames include the hashes.
-The app is ready for deployment.
-
-npm run eject
-This is a one-way operation. Once you eject, you can’t go back! This command will remove the single build dependency from your project.
+Advanced Configuration
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
 Deployment
-You can deploy the build folder to any web server or static hosting service. Follow this guide for more deployment information.
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-Configuration
-OpenWeatherMap API
-The weather data is fetched from the OpenWeatherMap API at 5-minute intervals. To change the interval, modify the setInterval function in WeatherApp.js.
-Ensure to replace the default API key with your own key in the .env file.
-Custom Thresholds
-Users can define a temperature alert threshold from the app UI. If the current temperature exceeds this threshold, an alert is triggered and displayed on the screen.
-Learn More
-To learn more about React, visit the React documentation.
-
-You can also check the Create React App documentation for more insights on the project setup.
-
-Authors
-Your Name - [GitHub Profile](https://github.com/karthikguna2996)
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-This format ensures that all the code blocks, including the steps for installing dependencies and setting up the environment variables, are displayed correctly in markdown.
-
+npm run build fails to minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
