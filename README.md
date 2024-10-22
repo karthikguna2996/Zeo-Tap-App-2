@@ -53,25 +53,22 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ### 1. Clone the Repository
 
-```bash
-git clone https://github.com/karthikguna2996/Zeo-Tap-App-2.git
-cd Zeo-Tap-App-2
-
-### Installing
-1. Clone the repository:
-
-   
-       git clone https://github.com/yourusername/weather-app.git
+    git clone https://github.com/karthikguna2996/Zeo-Tap-App-2.git
+    
+ 
 2.Install the dependencies:
    
-       cd weather-app
+      cd Zeo-Tap-App-2
        npm install
  
  
-3.Create a .env file in the project root and add your OpenWeatherMap API key:
+3. Get an OpenWeatherMap API Key
+   Visit OpenWeatherMap to create an account and get your API key. Once you have it, replace the placeholder API key in WeatherApp.js:
 
      
-     REACT_APP_API_KEY=your_api_key_here
+        const response = await axios.get(
+           "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=YOUR_API_KEY&units=metric");
+
  
  
 4.Start the development server:
@@ -79,45 +76,25 @@ cd Zeo-Tap-App-2
      npm start
 The app will be running at http://localhost:3000.
 
-Available Scripts
-In the project directory, you can run:
+Learn More
+You can learn more in the Create React App documentation.
 
-npm start:
-Runs the app in development mode.
-Open http://localhost:3000 to view it in your browser.
+To learn React, check out the React documentation.
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+Code Splitting
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-npm test:
-Launches the test runner in the interactive watch mode.
-To learn more about testing, visit the testing documentation.
+Analyzing the Bundle Size
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-npm run build:
-Builds the app for production to the build folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Making a Progressive Web App
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-The build is minified, and the filenames include the hashes.
-The app is ready for deployment.
-
-npm run eject:
-This is a one-way operation. Once you eject, you can’t go back! This command will remove the single build dependency from your project.
+Advanced Configuration
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
 Deployment
-You can deploy the build folder to any web server or static hosting service. Follow this guide for more deployment information.
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-Configuration
-OpenWeatherMap API
-The weather data is fetched from the OpenWeatherMap API at 5-minute intervals. To change the interval, modify the setInterval function in WeatherApp.js.
-Ensure to replace the default API key with your own key in the .env file.
-Custom Thresholds
-Users can define a temperature alert threshold from the app UI. If the current temperature exceeds this threshold, an alert is triggered and displayed on the screen.
-Learn More
-To learn more about React, visit the React documentation.
-
-You can also check the Create React App documentation for more insights on the project setup.
-
-Authors
-Your Name - https://github.com/karthikguna2996
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+npm run build fails to minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
