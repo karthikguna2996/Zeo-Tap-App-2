@@ -53,13 +53,13 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ### 1. Clone the Repository
 
-        git clone https://github.com/karthikguna2996/Zeo-Tap-App-2.git
-        cd Zeo-Tap-App-2
+    git clone https://github.com/karthikguna2996/Zeo-Tap-App-2.git
+    cd Zeo-Tap-App-2
     
  
 ###2.Install the dependencies:
    
-        npm install
+    npm install
  
  
 ###3.Get an OpenWeatherMap API Key Visit (https://openweathermap.org/)  to create an account and get your API key. Once you have it, replace the placeholder API key in WeatherApp.js:
@@ -81,16 +81,16 @@ You can learn more in the Create React App documentation.
 
 To learn React, check out the React documentation.
 
-###Code Splitting
+Code Splitting
 This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-###Analyzing the Bundle Size
+Analyzing the Bundle Size
 This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-###Making a Progressive Web App
+Making a Progressive Web App
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-###Advanced Configuration
+Advanced Configuration
 This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
 Deployment
