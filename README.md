@@ -56,22 +56,18 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
     git clone https://github.com/karthikguna2996/Zeo-Tap-App-2.git
     cd Zeo-Tap-App-2
     
- 
-###2.Install the dependencies:
+### 2. Install the dependencies:
    
     npm install
  
- 
-###3.Get an OpenWeatherMap API Key Visit (https://openweathermap.org/)  to create an account and get your API key. Once you have it, replace the placeholder API key in WeatherApp.js:
-
+### 3. Get an OpenWeatherMap API Key Visit (https://openweathermap.org/)  to create an account and get your API key. Once you have it, replace the placeholder API key in WeatherApp.js:
    
      
     const response = await axios.get(
     "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=YOUR_API_KEY&units=metric");
 
  
- 
-###4.Start the development server:
+### 4. Start the development server:
 
     npm start
 The app will be running at http://localhost:3000.
