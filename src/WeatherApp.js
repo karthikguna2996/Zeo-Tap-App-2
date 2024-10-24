@@ -73,7 +73,7 @@ export default function WeatherApp() {
       try {
         setLoading(true);
         const response = await axios.get(
-          "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=e27eb7143ad52f35a26ec4d5cc33f3d7&units=metric"
+          "https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=e27eb7143ad52f35a26ec4d5cc33f3d7&units=metric"
         );
 
         const dailySummaries = processWeatherData(response.data.list);
